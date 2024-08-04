@@ -13,7 +13,19 @@ function Fullname (){
         if (firstName && lastName) {
             setFullName(`${firstName} ${lastName}`);
             setError('');
-          } else {
+          }
+          else if(firstName && !lastName){
+            setFullName(`${firstName} ${lastName}`);
+            setError('Both fields are required.');
+
+          }
+          else if (!firstName && lastName){
+            setFullName(`${firstName} ${lastName}`);
+            setError('Both fields are required.');
+
+          }
+          
+          else {
             setError('Both fields are required.');
           }
     };
